@@ -1,0 +1,25 @@
+{
+  "name": "tests-en-node",
+  "version": "1.0.0",
+  "description": "Base Project en Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --recursive --exit"
+  },
+  "author": "Diego y Casu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
+    "exec-sql": "^2.0.2",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  }
+}
