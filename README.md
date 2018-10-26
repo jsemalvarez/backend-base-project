@@ -7,10 +7,21 @@ Antes que nada, debemos instalar las dependencias definidas en el archivo `packa
 npm install
 ```
 
-## Correr los tests
+## Correr los tests de EJEMPLO
 
-- Crear db de test especificada en `.env.test` (POR UNICA VEZ)
+- Crear la db `test_db` (POR UNICA VEZ)
+- Correr los tests
+
+```bash
+NODE_ENV=test npm test
+```
+
+## Correr los tests contra la nueva estructura de BD
+
+- Modificar el archivo `.env.test` con el nombre de la nueva base de datos de test
+- Crear la db de test especificada en `.env.test` (POR UNICA VEZ)
 - Actualizar el archivo `./dbscripts/create-test-db.sql` con el script de creación de la base de datos
+- Actualizar los tests de acuerdo a la estructura de la nueva base de datos
 - Correr los tests
 
 ```bash
