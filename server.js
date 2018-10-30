@@ -24,7 +24,8 @@ app.use(cors())
 
 // Application routes
 var handlers = {
-  examples: require('./app/handlers/examplesHandler')
+  users: require('./app/handlers/usersHandler'),
+  products: require('./app/handlers/productsHandler')
 };
 
 routes.setup(app, handlers);
