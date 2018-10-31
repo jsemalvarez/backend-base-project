@@ -1,4 +1,3 @@
-/*
 var request = require('supertest')
 var expect = require('chai').expect
 var server = require('../../server')
@@ -41,4 +40,3 @@ describe('Product Handler', function() {
     })
   })
 })
-*/
