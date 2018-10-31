@@ -8,7 +8,7 @@ npm install
 ```
 
 ## Correr los tests de EJEMPLO
-
+- Crear `.env.test` siguiendo el ejemplo `.env.example`
 - Crear la db `test_db` (POR UNICA VEZ)
 - Correr los tests
 
