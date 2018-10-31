@@ -1,11 +1,11 @@
 /*
 hay que crear la tabla a mano la primera vez para que este codigo no tire error 
 */
-DROP DATABASE IF EXISTS ecommerce_test;
+DROP DATABASE IF EXISTS `ecommerce_test`;
 
-CREATE DATABASE ecommerce_test;
+CREATE DATABASE `ecommerce_test`;
 
-USE ecommerce_test;
+USE `ecommerce_test`;
 
 CREATE TABLE IF NOT EXISTS `users` (
 `id` int NOT NULL AUTO_INCREMENT,
@@ -64,13 +64,13 @@ PRIMARY KEY(`id_product`, `id_purchases`)
 );
 -- Los nombre de las restricciones son unicos para toda la Base de Datos
 ALTER TABLE `products_for_purchases`
-ADD CONSTRAINT FK_idPurchases_productsForPurchases_R_id_purchases FOREIGN KEY (`id_purchases`) REFERENCES `purchases`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-ADD CONSTRAINT FK_idProduct_productsForPurchases_R_id_products  FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ADD CONSTRAINT `FK_idPurchases_productsForPurchases_R_id_purchases` FOREIGN KEY (`id_purchases`) REFERENCES `purchases`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD CONSTRAINT `FK_idProduct_productsForPurchases_R_id_products`  FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 ALTER TABLE `categories_for_products`
-ADD CONSTRAINT FK_idCategory_categoriesForProducts_R_id_category FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-ADD CONSTRAINT FK_idProduct_categoriesForProducts_R_id_products FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ADD CONSTRAINT `FK_idCategory_categoriesForProducts_R_id_category` FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD CONSTRAINT `FK_idProduct_categoriesForProducts_R_id_products` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 ALTER TABLE `wishlists`
-ADD CONSTRAINT FK_idUser_wishlists_R_id_users FOREIGN KEY (`id_user`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-ADD CONSTRAINT FK_idProduct_wishlists_R_id_products FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ADD CONSTRAINT `FK_idUser_wishlists_R_id_users` FOREIGN KEY (`id_user`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD CONSTRAINT `FK_idProduct_wishlists_R_id_products` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
