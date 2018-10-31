@@ -42,8 +42,7 @@ describe('Product Model', function() {
     it('adds a new product', function(done) {
       ProductModel.getAll(function(err, res) {
         var qty = res.length;
-
-        ProductModel.add({ username: 'tato',password: '1234' }, function(err, res) {
+        ProductModel.add({ name: 'tato', price: '1234', last_price: '1000', stock: '2' }, function(err, res) {
           expect(err).to.not.exist;
           expect(res.insertId).to.exist;
         
