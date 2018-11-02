@@ -3,6 +3,7 @@ var request = require('supertest')
 var expect = require('chai').expect
 var server = require('../../server')
 var UserModel = require('../../app/models/user')
+var UserModelTest = require('../../app/handlers/usersHandler')
 var utils = require('../utils')
 
 describe('User Handler', function() {
@@ -29,5 +30,4 @@ describe('User Handler', function() {
       
     })
   })
-  
 })

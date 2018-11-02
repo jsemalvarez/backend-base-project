@@ -11,7 +11,8 @@ function getList(req, res) {
   })
 }
 
-function addUser(req, res) {
+
+function add(req, res) {
   User.add(function(err, result) {
     if (err) {      
       return res.status(500).json({
