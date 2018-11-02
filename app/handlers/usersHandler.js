@@ -11,4 +11,15 @@ function getList(req, res) {
   })
 }
 
+function addUser(req, res) {
+  User.add(function(err, result) {
+    if (err) {      
+      return res.status(500).json({
+        message: err
+      })
+    }
+    res.status(200).json(result)
+  })
+}
+
 module.exports.getList = getList;

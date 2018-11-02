@@ -26,6 +26,8 @@ describe('User Handler', function() {
         expect(res.body[1].username).to.eq('tito')
         done()
       })
+      
     })
   })
+  
 })
