@@ -43,7 +43,7 @@ describe('Usuario Model', function() {
       });      
     })
 
-    it('adds the same user', function(done) {
+    it('does not add a new user with an existing username', function(done) {
       UserModel.getAll(function(err, res) {
         var qty = res.length;
 
