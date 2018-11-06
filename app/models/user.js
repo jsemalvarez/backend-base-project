@@ -10,8 +10,18 @@ Users.getAll = function (cb) {
 }
 
 Users.add = function (data, cb) {
-  var sqlQuery = `INSERT INTO users (username,password) VALUES ('${data.username}','${data.password}')`
-  connection.query(sqlQuery, cb)
+
+	if( data.username != null && data.password != null ){
+	  var sqlQuery = `INSERT INTO users (username,password) VALUES ('${data.username}','${data.password}')`
+	  connection.query(sqlQuery, cb)
+	}else if(data.username == null){		
+		cb({message: "username can not null"})
+	}else if(data.password == null){
+		cb({message: "password can not null"})
+	}else{
+		cb({message: "datos incorrectos"})
+	}
+
 }
 
 module.exports = Users

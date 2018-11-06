@@ -59,6 +59,36 @@ describe('Usuario Model', function() {
       });      
     })
 
+    it('does not add a new user without an username', function(done) {
+      UserModel.getAll(function(err, res) {
+        var qty = res.length;
+
+        UserModel.add({ username: null,password: '1234' }, function(err, res) {
+          expect(err).to.exist;          
+        
+          UserModel.getAll(function(err, res) {
+            expect(res.length).to.equal(qty);
+            done()
+          });
+        })
+      });      
+    })
+
+    it('does not add a new user without a password', function(done) {
+      UserModel.getAll(function(err, res) {
+        var qty = res.length;
+
+        UserModel.add({ username: "lolo",password: null }, function(err, res) {
+          expect(err).to.exist;          
+        
+          UserModel.getAll(function(err, res) {
+            expect(res.length).to.equal(qty);
+            done()
+          });
+        })
+      });      
+    })
+
   })// end describe '#add'
 
 })// end describe 'Usuario Model'
