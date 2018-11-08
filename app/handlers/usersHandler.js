@@ -11,6 +11,7 @@ function getList(req, res) {
   })
 }
 
+
 function add(req, res) {
   User.add(function(err, result) {
     if (err) {      

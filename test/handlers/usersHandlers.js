@@ -27,8 +27,10 @@ describe('User Handler', function() {
         expect(res.body[1].username).to.eq('tito')
         done()
       })
+      
     })
   })
+
   describe('POST /api/users', function () {
     it('add a new user', function(done) {
       request(server).post('/api/users').send({
