@@ -9,7 +9,7 @@ var utils = require('../utils')
 describe('User Handler', function() {
   before(function(done) {
     utils.cleanDB(function(){
-      // Adding two intial examples
+      // Adding two i|ntial examples
       UserModel.add({ username: 'pepe',password: '1234' }, function() {
         UserModel.add({ username: 'tito',password: '1234' }, function() {
           done()
@@ -29,7 +29,15 @@ describe('User Handler', function() {
       })
     })
   })
-
-
-
+  describe('POST /api/users', function () {
+    it('add a new user', function(done) {
+      request(server).post('/api/users').send({
+        username: " "
+      }).end(function(err, res) {
+        console.log("esto dice = " + err);
+        expect(res.status).to.eq(400)
+        done()
+      })
+    })
+  })
 })

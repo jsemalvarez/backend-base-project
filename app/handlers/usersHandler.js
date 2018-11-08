@@ -23,3 +23,4 @@ function add(req, res) {
 }
 
 module.exports.getList = getList;
+module.exports.add = add;
