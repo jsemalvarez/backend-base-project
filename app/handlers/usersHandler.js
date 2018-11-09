@@ -13,8 +13,9 @@ function getList(req, res) {
 
 
 function add(req, res) {
-  User.add(function(err, result) {
-    if (err) {      
+  console.log(req.body)
+  User.add(req.body, function(err, result) {
+    if (err) {           
       return res.status(500).json({
         message: err
       })

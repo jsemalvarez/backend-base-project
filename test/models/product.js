@@ -3,27 +3,25 @@ var ProductModel = require('../../app/models/product')
 var utils = require('../utils')
 
 describe('Product Model', function() {
-  before(function(done) {
-    utils.cleanDB(function(){
-      // Adding two intial examples
-      var tablet = {
-        name:'Tablet Xperia',
-        price: 5600,
-        last_price: 6000,
+  beforeEach(function(done) {
+    // Adding two intial examples
+    var tablet = {
+      name:'Tablet Xperia',
+      price: 5600,
+      last_price: 6000,
+      stock: 10
+    }
+    ProductModel.add(tablet, function() {
+      var auriculares = {
+        name:'auriculares sony',
+        price: 2500,
+        last_price: 2650,
         stock: 10
       }
-      ProductModel.add(tablet, function() {
-        var auriculares = {
-          name:'auriculares sony',
-          price: 2500,
-          last_price: 2650,
-          stock: 10
-        }
-        ProductModel.add(auriculares, function() {
-          done()
-        })
+      ProductModel.add(auriculares, function() {
+        done()
       })
-    })    
+    })
   })
 
   describe('#getAll', function () {

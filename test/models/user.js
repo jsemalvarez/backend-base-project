@@ -3,15 +3,13 @@ var UserModel = require('../../app/models/user')
 var utils = require('../utils')
 
 describe('Usuario Model', function() {
-  before(function(done) {
-    utils.cleanDB(function(){
-      // Adding two intial examples
-      UserModel.add({ username: 'pepe',password: '1234' }, function() {
-        UserModel.add({ username: 'tito',password: '1234' }, function() {
-          done()
-        })
+  beforeEach(function(done) {
+    // Adding two intial examples
+    UserModel.add({ username: 'pepe',password: '1234' }, function() {
+      UserModel.add({ username: 'tito',password: '1234' }, function() {
+        done()
       })
-    })    
+    })
   })
 
   describe('#getAll', function () {

@@ -1,15 +1,15 @@
 var connection = require('../../database')
 
-var Users = function(usuario) {
+var User = function(usuario) {
   this.username = usuario.username;
   this.password = usuario.password;   
 }
 
-Users.getAll = function (cb) {
+User.getAll = function (cb) {
   connection.query('SELECT username,password  FROM users', cb)
 }
 
-Users.add = function (data, cb) {
+User.add = function (data, cb) {
 
 	if( data.username != null && data.password != null ){
 	  var sqlQuery = `INSERT INTO users (username,password) VALUES ('${data.username}','${data.password}')`
@@ -24,4 +24,4 @@ Users.add = function (data, cb) {
 
 }
 
-module.exports = Users
+module.exports = User

@@ -1,0 +1,10 @@
+USE `ecommerce_test`;
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE `users`;
+TRUNCATE TABLE `products`;
+TRUNCATE TABLE `purchases`;
+TRUNCATE TABLE `wishlists`;
+TRUNCATE TABLE `categories`;
+TRUNCATE TABLE `categories_for_products`;
+TRUNCATE TABLE `products_for_purchases`;
+SET FOREIGN_KEY_CHECKS=1;
